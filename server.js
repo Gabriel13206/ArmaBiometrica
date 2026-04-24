@@ -189,4 +189,7 @@ app.get('/verificar/:id', async (req, res) => {
 // Servir frontend
 app.use(express.static('.'));
 const PORT = process.env.PORT || 3000
-app.listen(PORT, () => console.log('SERVER http://localhost:' + PORT))
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => console.log('SERVER http://localhost:' + PORT))
+}
+module.exports = app
