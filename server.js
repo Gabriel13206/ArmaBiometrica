@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage })
 
+console.log('MONGO_URL:', process.env.MONGO_URL)
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         console.log('MongoDB conectado')
