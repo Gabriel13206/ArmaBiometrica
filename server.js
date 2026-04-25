@@ -19,7 +19,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage })
 
 mongoose.connect(process.env.MONGO_URL)
-    .then(() => console.log('MongoDB conectado'))
+    .then(() => {
+        console.log('MongoDB conectado')
+        criarAdminPadrao()
+    })
     .catch(e => console.log('MongoDB erro:', e.message))
 
 const Policia = mongoose.model('Policia', {
