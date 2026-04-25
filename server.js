@@ -21,9 +21,9 @@ const upload = multer({ storage })
 console.log('MONGO_URL:', process.env.MONGO_URL)
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
-        console.log('MongoDB conectado')
-        criarAdminPadrao()
-    })
+    console.log('MongoDB conectado')
+    criarAdminPadrao()
+})
     .catch(e => console.log('MongoDB erro:', e.message))
 
 const Policia = mongoose.model('Policia', {
@@ -78,7 +78,7 @@ async function criarAdminPadrao() {
         console.log('Utilizador admin criado: admin / admin123')
     }
 }
-criarAdminPadrao()
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'login.html'))
