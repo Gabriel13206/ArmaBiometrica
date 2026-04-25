@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage })
 
 console.log('MONGO_URL:', process.env.MONGO_URL)
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect('mongodb+srv://nataliamvemba20_db_user:dXhx5VhiJNdIQ69I@cluster0.roft5py.mongodb.net/policia?appName=Cluster0')
     .then(() => {
     console.log('MongoDB conectado')
     criarAdminPadrao()
